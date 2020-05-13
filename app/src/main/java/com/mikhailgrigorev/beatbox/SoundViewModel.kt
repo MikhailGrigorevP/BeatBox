@@ -18,4 +18,8 @@ class SoundViewModel(private val mBeatBox: BeatBox) : BaseObservable() {
             notifyChange()
         }
 
+    fun onButtonClicked() {
+        mBeatBox.play(mSound!!)
+    }
+
 }

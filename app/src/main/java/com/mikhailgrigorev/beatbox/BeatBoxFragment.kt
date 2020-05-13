@@ -29,6 +29,7 @@ class BeatBoxFragment : Fragment() {
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        retainInstance = true
         mBeatBox = BeatBox(activity!!)
     }
 
@@ -68,6 +69,11 @@ class BeatBoxFragment : Fragment() {
             return mSounds.size
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mBeatBox!!.release()
     }
 
     companion object {
